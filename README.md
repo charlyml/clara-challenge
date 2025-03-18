@@ -1,3 +1,11 @@
+# Hi there! 👋
+
+This is my solution to the Integration tech challenge, unfortunately I couldn't finish it on time, some things are broken and I didn't have time to fix them, but I hope you can see the effort I put into this project.
+
+The main goal here is to use the best practices and patterns to build a scalable and reliable system, I used an event driven architecture implementing the Outbox pattern to ensure the consistency of the data and be able to scale the system horizontally.
+
+## High-level Architecture
+
 ![clara-arquitecture](https://github.com/user-attachments/assets/57d4bf77-a8bb-46dd-ab1c-48ce24818f18)
 
 Transaction Consistency and Atomicity
