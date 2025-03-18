@@ -1,12 +1,26 @@
 ﻿services:
-  webapplication1:
-    image: webapplication1
-    build:
-      context: .
-      dockerfile: WebApplication1/Dockerfile
-
-  integrations:
+  api:
     image: integrations
     build:
       context: .
       dockerfile: Integrations/Dockerfile
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "15672:15672"
+    volumes:
+      - ./rabbitmq-data:/var/lib/rabbitmq
+      -
+  postgres:
+    container_name: postgres_db
+    image: postgres:14-alpine
+    ports:
+      - "5432:5432"
+    volumes:
+      - ~/apps/postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_USER=secret
+      - POSTGRES_DB=integrations
